@@ -19,4 +19,4 @@
 | Front Camera     | 	16 MP, f/2.0, 26mm (wide), 1.0µm        |
 | Fingerprint    | 	Yes, rear-mounted       |
 | Headphone jack     | 	Yes        |
-| Release Date     | 	February 2019        |
+| Release Date     | 	April 2019        |
