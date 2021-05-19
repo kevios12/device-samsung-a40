@@ -19,5 +19,12 @@ PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
+<<<<<<< HEAD
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 # BUILD_FINGERPRINT := "samsung/a40xx/a40:11/RP1A.200720.012/A405FNXXU3CUC2:user/release-keys"
+=======
+# BUILD_FINGERPRINT := "samsung/a40xx/a40:10/QP1A.190711.020/A405FNXXU3BTK4:user/release-keys"
+# PRODUCT_BUILD_PROP_OVERRIDES += \
+        PRODUCT_NAME=a40xx
+        PRIVATE_BUILD_DESC="a40xx 10 QP1A.190711.020 A405FNXXU3BTK4 release-keys"
+>>>>>>> 1d8506370d7765dc3090d7b3386567a991b10b04
