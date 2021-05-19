@@ -1,0 +1,15 @@
+
+[
+    {
+        "repository": "xxx",
+        "target_path": "device/samsung/a40"
+    },
+    {
+        "repository": "xxx",
+        "target_path": "hardware/samsung"
+    }, 
+    {
+        "repository": "xxx",
+        "target_path": "kernel/samsung/a40"
+    }, 
+]
