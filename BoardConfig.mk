@@ -1,15 +1,19 @@
 DEVICE_PATH := device/samsung/a40
 BOARD_VENDOR := samsung
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+# Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-03-01
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+
 # Platform
-TARGET_BOARD_PLATFORM := exynos5
+BOARD_VENDOR := samsung
+TARGET_BOARD_PLATFORM := exynos7904
 TARGET_SOC := exynos7904
 TARGET_BOOTLOADER_BOARD_NAME := universal7904
 TARGET_NO_BOOTLOADER := true
@@ -20,15 +24,14 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := cortex-a53
+TARGET_CPU_VARIANT := cortex-a53
 
+# Secondary Architecture
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := a40,a40dd
@@ -40,11 +43,16 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a40
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := a40_defconfig
 
+TARGET_USES_64_BIT_BINDER := true
+
 # Image
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+
+# System-as-root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Temp
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/Image
@@ -80,19 +88,27 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 BOARD_HAS_DOWNLOAD_MODE := true
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
 # Vendor
-TARGET_COPY_OUT_VENDOR
+TARGET_COPY_OUT_VENDOR := vendor
+
+# Seperate Vendor
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_JOURNAL_SIZE := 0
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+
+# Filesystem
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # VNDK
 BOARD_VNDK_VERSION := current
+BOARD_VNDK_RUNTIME_DISABLE := true
 
 # SELinux
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-
-# HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+# BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
@@ -100,6 +116,10 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+
+# Android Verified Boot
+BOARD_AVB_ENABLE := false
+BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 
 # Build system
 BUILD_BROKEN_DUP_RULES := true
@@ -110,47 +130,30 @@ TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 # Include
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.universal7904
-
-# SamsungDoze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
-# Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung-universal7904
+# DEX Pre-optimization
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT ?= true
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
+  endif
+endif
 
 # Skip Mount
 PRODUCT_COPY_FILES += \
     build/target/product/gsi/gsi_skip_mount.cfg:system/system_ext/etc/init/config/skip_mount.cfg
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
 # System properties
 -include $(LOCAL_PATH)/product_prop.mk
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
-
-# Touch
-PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.samsung
-    
-# FastCharge
-PRODUCT_PACKAGES += \
-    lineage.fastcharge@1.0-service.samsung    
-
-# Wifi
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
 
 # VNDK
 BOARD_VNDK_VERSION := current
 
-# Call proprietary blob setup
-$(call inherit-product-if-exists, vendor/samsung/a40/a40-vendor.mk)
+# Lineage hardware
+ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
+BOARD_HARDWARE_CLASS := \
+    hardware/samsung/lineagehw
+endif
+
+
+# Inherit from the proprietary version
+-include vendor/samsung/a40/BoardConfigVendor.mk
