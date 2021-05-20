@@ -7,15 +7,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from a40 device
+# Inherit from a30 device
+>>>>>>> e5f2962 (TEST)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := a40
-PRODUCT_NAME := lineage_a40
-PRODUCT_MODEL := SM-A405FN
 PRODUCT_BRAND := samsung
+PRODUCT_DEVICE := a40
 PRODUCT_MANUFACTURER := samsung
+PRODUCT_NAME := lineage_a40
+PRODUCT_MODEL := SM-A405F
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 TARGET_VENDOR := samsung

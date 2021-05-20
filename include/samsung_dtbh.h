@@ -1,6 +1,6 @@
 /* tools/mkbootimg/samsung_dtbh.h
 **
-** Copyright 2017, The LineageOS Project
+** Copyright 2020, The LineageOS Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -23,9 +23,8 @@
 #define DTBH_PLATFORM      "android"
 #define DTBH_SUBTYPE       "samsung"
  /* Hardcoded entry */
-#define DTBH_PLATFORM_CODE 0x000050a6
-#define DTBH_SUBTYPE_CODE  0x217584da
-
+#define DTBH_PLATFORM_CODE 0x01000000
+#define DTBH_SUBTYPE_CODE  0x20000000
 /* DTBH_MAGIC + DTBH_VERSION + DTB counts */
 #define DT_HEADER_PHYS_SIZE 12
 
