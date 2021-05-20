@@ -20,4 +20,4 @@ lib64/libsecaudiocoreutils.so
 lib64/libaptX_encoder.so
 
 # Camera
-lib/libcamera_client.so:system_ext/apex/com.android.vndk.v29/lib/libcamera_client.so
+lib/libcamera_client.so:system_ext/apex/com.android.vndk.current/lib/libcamera_client.so
