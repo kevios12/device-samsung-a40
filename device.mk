@@ -9,28 +9,6 @@ PRODUCT_PACKAGES += \
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service   
-    
-# Init scripts
-PRODUCT_PACKAGES += \
-    init.target.rc \
-    init.usb_accessory.rc \
-    fstab.enableswap
-
-# NFC
-PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    NfcNci \
-    Tag
-    
-# Net
-PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
-
-# Recovery
-PRODUCT_PACKAGES += \
-    fastbootd \
-    init.recovery.exynos7904.rc
 
 #PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/configs/libnfc-nci.conf:system/etc/libnfc-nci.conf \
