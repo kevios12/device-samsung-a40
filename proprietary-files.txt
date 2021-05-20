@@ -15,8 +15,29 @@ vendor/etc/media_codecs_google_audio.xml
 vendor/etc/playback_record_audio_policy_configuration.xml
 vendor/etc/r_submix_audio_policy_configuration.xml
 vendor/etc/usb_audio_policy_configuration.xml
+
+# Firmware
 vendor/firmware/AP_AUDIO_SLSI.bin
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
+vendor/firmware/calliope_dram.bin
+vendor/firmware/calliope_sram.bin
+vendor/firmware/dax_param.bin
+vendor/firmware/fimc_is_lib.bin
+vendor/firmware/fimc_is_rta.bin
+vendor/firmware/mfc_fw.bin
+vendor/firmware/nfc/sec_s3nrn82_firmware.bin
+vendor/firmware/setfile_2p6.bin
+vendor/firmware/setfile_2x5.bin
+vendor/firmware/setfile_5e9.bin
+vendor/firmware/Tfa9896.cnt
+
+# GPS
+vendor/bin/hw/gpsd
+vendor/bin/hw/gps.sh
+vendor/etc/gnss/gps.cfg
+vendor/etc/gnss/gps.debug.cfg
+vendor/etc/init/init.gps.rc
+
 vendor/lib64/android.hardware.audio.common@2.0-util.so
 vendor/lib64/android.hardware.audio.common@4.0-util.so
 vendor/lib64/android.hardware.audio.common-util.so
@@ -120,8 +141,7 @@ vendor/bin/hw/android.hardware.usb@1.1-service.exynos7885
 vendor/bin/hw/android.hardware.wifi@1.0-service
 vendor/bin/hwclock
 vendor/bin/hw/com.dsi.ant@1.0-service
-vendor/bin/hw/gpsd
-vendor/bin/hw/gps.sh
+
 vendor/bin/hw/hostapd
 vendor/bin/hw/macloader
 vendor/bin/hw/mfgloader
@@ -324,8 +344,7 @@ vendor/etc/fs_config_files
 vendor/etc/fstab.exynos7904
 vendor/etc/gnss/ca.pem
 vendor/etc/gnss/deleteLogCommands
-vendor/etc/gnss/gps.cfg
-vendor/etc/gnss/gps.debug.cfg
+
 vendor/etc/group
 
 vendor/etc/hqm_device.xml
@@ -357,7 +376,7 @@ vendor/etc/init/icd_over_five_vendor.rc
 vendor/etc/init/init.baseband.rc
 vendor/etc/init/init.exynos7904.rc
 vendor/etc/init/init.exynos7904.usb.rc
-vendor/etc/init/init.gps.rc
+
 vendor/etc/init/init.nfc.samsung.rc
 vendor/etc/init/init.vendor.onebinary.rc
 vendor/etc/init/init.vendor.rilchip.rc
@@ -373,7 +392,7 @@ vendor/etc/init/teegris_v3.rc
 vendor/etc/init/vaultkeeper_common.rc
 vendor/etc/init/vendor.samsung.hardware.authfw@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.biometrics.fingerprint@3.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service.rc
+
 vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.hqm@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.miscpower@2.0-service.rc
@@ -401,23 +420,6 @@ vendor/etc/locale/plmn_delta_eng.bin
 vendor/etc/locale/plmn_delta_zh-rCN.bin
 vendor/etc/locale/plmn_delta_zh-rHK.bin
 vendor/etc/locale/plmn_delta_zh-rTW.bin
-vendor/etc/media_codecs_ac4.xml
-vendor/etc/media_codecs_c2_sec_ape.xml
-vendor/etc/media_codecs_c2_sec_qcp.xml
-vendor/etc/media_codecs_c2_sec_wmx.xml
-vendor/etc/media_codecs_c2_sec.xml
-vendor/etc/media_codecs_ddp.xml
-
-vendor/etc/media_codecs_google_telephony.xml
-vendor/etc/media_codecs_google_video.xml
-vendor/etc/media_codecs_performance_c2.xml
-vendor/etc/media_codecs_performance.xml
-vendor/etc/media_codecs_sec_ape.xml
-vendor/etc/media_codecs_sec_primary.xml
-vendor/etc/media_codecs_sec_qcp.xml
-vendor/etc/media_codecs_sec_video_primary.xml
-vendor/etc/media_codecs.xml
-vendor/etc/media_profiles_V1_0.xml
 vendor/etc/mercury.json
 vendor/etc/mixer_gains_00.xml
 vendor/etc/mixer_gains.xml
@@ -429,38 +431,6 @@ vendor/etc/nfc/sec_s3nrn82_rfreg.bin
 vendor/etc/NOTICE.xml.gz
 vendor/etc/passwd
 vendor/etc/pdpcnt-conf.xml
-vendor/etc/permissions/android.hardware.bluetooth_le.xml
-vendor/etc/permissions/android.hardware.bluetooth.xml
-vendor/etc/permissions/android.hardware.camera.flash-autofocus.xml
-vendor/etc/permissions/android.hardware.camera.front.xml
-vendor/etc/permissions/android.hardware.camera.xml
-vendor/etc/permissions/android.hardware.location.gps.xml
-vendor/etc/permissions/android.hardware.nfc.hcef.xml
-vendor/etc/permissions/android.hardware.nfc.hce.xml
-vendor/etc/permissions/android.hardware.nfc.uicc.xml
-vendor/etc/permissions/android.hardware.nfc.xml
-vendor/etc/permissions/android.hardware.opengles.aep.xml
-vendor/etc/permissions/android.hardware.sensor.accelerometer.xml
-vendor/etc/permissions/android.hardware.sensor.compass.xml
-vendor/etc/permissions/android.hardware.sensor.gyroscope.xml
-vendor/etc/permissions/android.hardware.sensor.light.xml
-vendor/etc/permissions/android.hardware.telephony.gsm.xml
-vendor/etc/permissions/android.hardware.telephony.ims.xml
-vendor/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-vendor/etc/permissions/android.hardware.usb.accessory.xml
-vendor/etc/permissions/android.hardware.usb.host.xml
-vendor/etc/permissions/android.hardware.vulkan.compute.xml
-vendor/etc/permissions/android.hardware.vulkan.level.xml
-vendor/etc/permissions/android.hardware.vulkan.version.xml
-vendor/etc/permissions/android.hardware.wifi.direct.xml
-vendor/etc/permissions/android.hardware.wifi.passpoint.xml
-vendor/etc/permissions/android.hardware.wifi.xml
-vendor/etc/permissions/android.software.midi.xml
-vendor/etc/permissions/android.software.vulkan.deqp.level.xml
-vendor/etc/permissions/com.android.nfc_extras.xml
-vendor/etc/permissions/com.nxp.mifare.xml
-vendor/etc/permissions/handheld_core_hardware.xml
-
 vendor/etc/plmn_delta_attaio.bin
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_hktw.bin
@@ -468,7 +438,6 @@ vendor/etc/plmn_delta_usagsm.bin
 vendor/etc/plmn_se13.bin
 vendor/etc/public.libraries.txt
 vendor/etc/public.libraries.txt.backup
-
 vendor/etc/seccomp_policy/configstore@1.1.policy
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/seccomp_policy/mediaextractor_sec.policy
@@ -515,17 +484,7 @@ vendor/etc/wlan_common_rc
 vendor/etc/wlan_vendor_rc
 vendor/etc/yas_set.cfg
 
-vendor/firmware/calliope_dram.bin
-vendor/firmware/calliope_sram.bin
-vendor/firmware/dax_param.bin
-vendor/firmware/fimc_is_lib.bin
-vendor/firmware/fimc_is_rta.bin
-vendor/firmware/mfc_fw.bin
-vendor/firmware/nfc/sec_s3nrn82_firmware.bin
-vendor/firmware/setfile_2p6.bin
-vendor/firmware/setfile_2x5.bin
-vendor/firmware/setfile_5e9.bin
-vendor/firmware/Tfa9896.cnt
+
 
 vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
 vendor/lib64/android.hardware.camera.provider@2.5-legacy.so
@@ -772,6 +731,7 @@ vendor/lib64/vendor.samsung.hardware.biometrics.fingerprint@3.0.so
 # Camera
 vendor/lib/hw/camera.exynos7904.so
 
+
 # Light
 vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so
 
@@ -867,7 +827,7 @@ vendor/lib/hw/power.default.so
 vendor/lib/hw/sensors.universal7904.so
 vendor/lib/hw/thermal.universal7904.so
 vendor/lib/hw/vendor.samsung.hardware.audio@1.0-impl.so
-vendor/lib/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
+
 vendor/lib/hw/vendor.samsung.hardware.snap@1.2-impl.so
 vendor/lib/hw/vibrator.default.so
 vendor/lib/hw/vulkan.universal7904.so
@@ -910,7 +870,7 @@ vendor/lib/libeffects.so
 vendor/lib/libegis_fp_normal_sensor_test.so
 vendor/lib/libeis_core.so
 vendor/lib/libepicoperator.so
-vendor/lib/libexynoscamera3.so
+
 vendor/lib/libexynosdisplay.so
 vendor/lib/libexynosgraphicbuffer_public.so
 vendor/lib/libexynosgraphicbuffer.so
@@ -927,7 +887,7 @@ vendor/lib/libgf_in_system_lib.so
 vendor/lib/libgiantmscl.so
 vendor/lib/libGrallocWrapper.so
 vendor/lib/libhandgesture.arcsoft.so
-vendor/lib/libHandGesture.camera.samsung.so
+
 vendor/lib/libhidltransport.so
 vendor/lib/libHMT.so
 vendor/lib/libhqm_hwparam.so
