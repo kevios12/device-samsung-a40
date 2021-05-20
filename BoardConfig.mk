@@ -60,18 +60,9 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/Image
 # Audio
 TARGET_EXCLUDES_AUDIOFX := true
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    audio.a2dp.default
-    
-# Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
 # Bootanimation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 2340
-TARGET_BOOT_ANIMATION_RES := 1080
 
 # Partitions
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 55574528
@@ -124,9 +115,6 @@ BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 # Build system
 BUILD_BROKEN_DUP_RULES := true
 
-# Camera
-TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
-
 # Include
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -145,15 +133,11 @@ PRODUCT_COPY_FILES += \
 # System properties
 -include $(LOCAL_PATH)/product_prop.mk
 
-# VNDK
-BOARD_VNDK_VERSION := current
-
 # Lineage hardware
 ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
 BOARD_HARDWARE_CLASS := \
     hardware/samsung/lineagehw
 endif
-
 
 # Inherit from the proprietary version
 -include vendor/samsung/a40/BoardConfigVendor.mk
