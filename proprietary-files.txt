@@ -1,4 +1,3 @@
-# Audio
 vendor/bin/hw/android.hardware.audio.service
 vendor/etc/audio_board_info.xml
 vendor/etc/audio_effects_common.conf
@@ -38,10 +37,6 @@ vendor/lib64/soundfx/libaudioeffectoffload.so
 vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libaudiosaplus_sec.so
 vendor/lib64/vendor.samsung.hardware.audio@1.0.so
-
-
-
-
 vendor/bin/acpi
 vendor/bin/add.pb
 vendor/bin/awk
@@ -134,7 +129,7 @@ vendor/bin/hw/rild
 vendor/bin/hw/sec.android.hardware.nfc@1.2-service
 vendor/bin/hw/vendor.samsung.hardware.authfw@1.0-service
 vendor/bin/hw/vendor.samsung.hardware.biometrics.fingerprint@3.0-service
-vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service
+
 vendor/bin/hw/vendor.samsung.hardware.gnss@2.0-service
 vendor/bin/hw/vendor.samsung.hardware.hqm@1.0-service
 vendor/bin/hw/vendor.samsung.hardware.hyper-service
@@ -736,7 +731,6 @@ vendor/lib64/libvdis_interface.so
 vendor/lib64/libvideobeauty_interface.so
 vendor/lib64/libvkmanager_vendor.so
 vendor/lib64/libvkservice.so
-
 vendor/lib64/libwifi-hal.so
 vendor/lib64/libwpa_client.so
 vendor/lib64/libwrappergps.so
@@ -755,7 +749,6 @@ vendor/lib64/omx/libOMX.Exynos.VP8.Decoder.so
 vendor/lib64/omx/libOMX.Exynos.VP8.Encoder.so
 vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
 vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
-
 vendor/lib64/soundfx/libbundlewrapper.so
 vendor/lib64/soundfx/libdownmix.so
 vendor/lib64/soundfx/libdynproc.so
@@ -769,23 +762,36 @@ vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
 vendor/lib64/soundfx/libswdap.so
 vendor/lib64/soundfx/libvisualizer.so
-vendor/lib64/vendor.samsung.camera.device@5.0-impl.so
+
 vendor/lib64/vendor.samsung.frameworks.security.dsms@1.0.so
 vendor/lib64/vendor.samsung.frameworks.security.ucm.crypto@1.0.so
-
 vendor/lib64/vendor.samsung.hardware.authfw@1.0.so
 vendor/lib64/vendor.samsung.hardware.biometrics.fingerprint@3.0.so
-vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
-vendor/lib64/vendor.samsung.hardware.camera.device@5.0.so
-vendor/lib64/vendor.samsung.hardware.camera.provider@4.0-legacy.so
-vendor/lib64/vendor.samsung.hardware.camera.provider@4.0.so
-vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
+
+
+# Camera
+vendor/lib/hw/camera.exynos7904.so
+
+# Light
+vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so
+
+# Health
 vendor/lib64/vendor.samsung.hardware.health@2.0.so
+
+# Bluetotooth
+vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
+
+# NFC
+vendor/lib64/vendor.samsung.hardware.nfc@2.0.so
+
+
+
+
 vendor/lib64/vendor.samsung.hardware.hqm@1.0.so
 vendor/lib64/vendor.samsung.hardware.hyper-V1-ndk_platform.so
-vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so
+vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.miscpower@2.0.so
-vendor/lib64/vendor.samsung.hardware.nfc@2.0.so
+
 vendor/lib64/vendor.samsung.hardware.radio@2.0.so
 vendor/lib64/vendor.samsung.hardware.radio@2.1.so
 vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
@@ -828,14 +834,9 @@ vendor/lib64/vndk/libstagefright_foundation.so
 vendor/lib/android.hardware.audio.common@2.0-util.so
 vendor/lib/android.hardware.audio.common@4.0-util.so
 vendor/lib/android.hardware.audio.common-util.so
-vendor/lib/android.hardware.camera.provider@2.4-legacy.so
-vendor/lib/android.hardware.camera.provider@2.5-legacy.so
+
 vendor/lib/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib/camera.device@1.0-impl.so
-vendor/lib/camera.device@3.2-impl.so
-vendor/lib/camera.device@3.3-impl.so
-vendor/lib/camera.device@3.4-impl.so
-vendor/lib/camera.device@3.5-impl.so
+
 vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/android.hardware.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.audio@4.0-impl.so
@@ -854,7 +855,7 @@ vendor/lib/hw/audio.primary.exynos7904.so
 vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.sec_primary.default.so
 vendor/lib/hw/audio.usb.default.so
-vendor/lib/hw/camera.exynos7904.so
+
 vendor/lib/hw/fingerprint.default.so
 vendor/lib/hw/gatekeeper.exynos7904.so
 vendor/lib/hw/gralloc.default.so
@@ -1083,9 +1084,7 @@ vendor/lib/vendor.samsung.camera.device@5.0-impl.so
 vendor/lib/vendor.samsung.hardware.audio@1.0.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dpsink@1.0.so
-vendor/lib/vendor.samsung.hardware.camera.device@5.0.so
-vendor/lib/vendor.samsung.hardware.camera.provider@4.0-legacy.so
-vendor/lib/vendor.samsung.hardware.camera.provider@4.0.so
+
 vendor/lib/vendor.samsung.hardware.health@2.0.so
 vendor/lib/vendor.samsung.hardware.hqm@1.0.so
 vendor/lib/vendor.samsung.hardware.hyper-V1-ndk_platform.so
@@ -1165,6 +1164,8 @@ vendor/overlay/NavigationBarModeSamsungGesturalNoHint/NavigationBarModeSamsungGe
 vendor/overlay/SoftapOverlay/SoftapOverlay.apk
 vendor/overlay/TetheringOverlay_Gsi/TetheringOverlay_Gsi.apk
 vendor/overlay/TetheringOverlay_InProcess/TetheringOverlay_InProcess.apk
+
+# MISC
 vendor/tee/00000000-0000-0000-0000-00000000dead
 vendor/tee/00000000-0000-0000-0000-000000010081
 vendor/tee/00000000-0000-0000-0000-000000020081
