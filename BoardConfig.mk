@@ -139,18 +139,17 @@ PRODUCT_PACKAGES += \
 # Touch
 PRODUCT_PACKAGES += \
     lineage.touch@1.0-service.samsung
+    
+# FastCharge
+PRODUCT_PACKAGES += \
+    lineage.fastcharge@1.0-service.samsung    
 
 # Wifi
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
 # VNDK
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/vndkcore.libraries.29.txt:system/system_ext/apex/com.android.vndk.v29/etc/vndkcore.libraries.29.txt \
-    $(LOCAL_PATH)/configs/vndkprivate.libraries.29.txt:system/system_ext/apex/com.android.vndk.v29/etc/vndkprivate.libraries.29.txt \
-    $(LOCAL_PATH)/configs/placeholder:system/system_ext/apex/com.android.vndk.v29/lib/libstagefright_foundation.so  
+BOARD_VNDK_VERSION := current
 
 # Call proprietary blob setup
 $(call inherit-product-if-exists, vendor/samsung/a40/a40-vendor.mk)
