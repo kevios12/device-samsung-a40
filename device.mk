@@ -32,10 +32,10 @@ PRODUCT_PACKAGES += \
     fastbootd \
     init.recovery.exynos7904.rc
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-nci.conf:system/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/configs/nfc_key:system/etc/nfc_key \
-    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/libnfc-nci.conf:system/etc/libnfc-nci.conf \
+#    $(LOCAL_PATH)/configs/nfc_key:system/etc/nfc_key \
+#    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
     
 # Seccomp
 #PRODUCT_COPY_FILES += \
