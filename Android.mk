@@ -1,7 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-
-ifneq ($(filter a40, $(TARGET_DEVICE)),)
-
+ifeq ($(TARGET_DEVICE),a40)
 include $(call all-makefiles-under,$(LOCAL_PATH))
-
+include $(CLEAR_VARS)
 endif
